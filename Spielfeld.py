@@ -9,11 +9,19 @@ spieler = 1
 Reihe1 = [0, 0, 0]
 Reihe2 = [0, 0, 0]
 Reihe3 = [0, 0, 0]
-
+Reihe1[0]=0
+Reihe1[1]=0
+Reihe1[2]=0
+Reihe2[0]=0
+Reihe2[1]=0
+Reihe2[2]=0
+Reihe3[0]=0
+Reihe3[1]=0
+Reihe3[2]=0
 
 def aa():
     global spieler
-    Reihe1[1] = spieler
+    Reihe1[0] = spieler
     if spieler == 1:
         spieler = 2
         x1y1.configure(background="yellow")
@@ -21,38 +29,37 @@ def aa():
         spieler = 1
         x1y1.configure(background="green")
 
-    # if x1y1 == x2y1 & x2y1 == x3y1:
-    ######
-    # else:
-    #   if x1y2 == x2y2 & x2y2 == x3y2:
-    ##########
-    #  else:
-    #     if x1y3 == x2y3 & x2y3 == x3y3:
-    ##########
-    #    else:
-    #       if x1y1 == x1y2 & x1y2 == x1y3:
-    ###########
-    #      else:
-    #         if x2y1 == x2y2 & x2y2 == x2y3:
-    #######
-    #        else:
-    #           if x3y1 == x3y2 & x3y2 == x3y3:
-    ########
-    #          else:
-    #             if x1y1 == x2y2 & x2y2 == x3y3:
-    #######
-    #            else:
-    #               if x3y1 == x2y2 & x2y2 == x1y3:
-    ##########
-    #              else:
-    #                 if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-    #                        x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-    ############
+    if (x1y1 == x2y1) & (x2y1 == x3y1) & (x1y1!=0):
+        print("gewonnen")
+    else:
+        if (x1y2 == x2y2) & (x2y2 == x3y2) & (x1y2!=0):
+            print("gewonnen")
+        else:
+            if (x1y3 == x2y3) & (x2y3 == x3y3) & (x1y3!=0):
+                print("gewonnen")
+            else:
+                if (x1y1 == x1y2) & (x1y2 == x1y3) & (x1y1!=0):
+                    print("gewonnen")
+                else:
+                    if (x2y1 == x2y2) & (x2y2 == x2y3) & (x2y1!=0):
+                        print("gewonnen")
+                    else:
+                        if (x3y1 == x3y2) & (x3y2 == x3y3) & (x3y1!=0):
+                            print("gewonnen")
+                        else:
+                            if (x1y1 == x2y2) & (x2y2 == x3y3) & (x1y1!=0):
+                                print("gewonnen")
+                            else:
+                                if (x3y1 == x2y2) & (x2y2 == x1y3) & (x3y1!=0):
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != '0') & (x1y2 != '0') & (x1y3 != '0') & (x2y1 != '0') & (x2y2 != '0') & (x2y3 != '0') & (x3y1 != '0') & (x3y2 != '0') & (x3y3 != '0'):
+                                        print("unentschieden")
 
 
 def ba():
     global spieler
-    Reihe1[2] = spieler
+    Reihe1[1] = spieler
     if spieler == 1:
         spieler = 2
         x2y1.configure(background="yellow")
@@ -60,41 +67,38 @@ def ba():
         spieler = 1
         x2y1.configure(background="green")
 
-        #   if x1y1 == x2y1 & x2y1 == x3y1:
-        ######
-        #  else:
-        if x1y2 == x2y2 & x2y2 == x3y2:
-            pass
-    ##########
-
-
-#     else:
-#        if x1y3 == x2y3 & x2y3 == x3y3:
-##########
-#       else:
-#          if x1y1 == x1y2 & x1y2 == x1y3:
-###########
-#         else:
-#            if x2y1 == x2y2 & x2y2 == x2y3:
-#           #######
-#          else:
-#             if x3y1 == x3y2 & x3y2 == x3y3:
-########
-#            else:
-#               if x1y1 == x2y2 & x2y2 == x3y3:
-#######
-#              else:
-#                 if x3y1 == x2y2 & x2y2 == x1y3:
-##########
-#                else:
-#                   if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-#                          x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-############
+        if x1y1 == x2y1 & x2y1 == x3y1:
+            print("gewonnen")
+        else:
+            if x1y2 == x2y2 & x2y2 == x3y2:
+                print("gewonnen")
+            else:
+                if x1y3 == x2y3 & x2y3 == x3y3:
+                    print("gewonnen")
+                else:
+                    if x1y1 == x1y2 & x1y2 == x1y3:
+                        print("gewonnen")
+                    else:
+                        if x2y1 == x2y2 & x2y2 == x2y3:
+                            print("gewonnen")
+                        else:
+                            if x3y1 == x3y2 & x3y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x1y1 == x2y2 & x2y2 == x3y3:
+                                    print("gewonnen")
+                                else:
+                                    if x3y1 == x2y2 & x2y2 == x1y3:
+                                        print("gewonnen")
+                                    else:
+                                        if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                                x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                            print("gewonnen")
 
 
 def ca():
     global spieler
-    Reihe1[3] = spieler
+    Reihe1[2] = spieler
     if spieler == 1:
         spieler = 2
         x3y1.configure(background="yellow")
@@ -102,38 +106,38 @@ def ca():
         spieler = 1
         x3y1.configure(background="green")
 
-    # if x1y1 == x2y1 & x2y1 == x3y1:
-    ######
-    # else:
-    #   if x1y2 == x2y2 & x2y2 == x3y2:
-    ##########
-    #  else:
-    #     if x1y3 == x2y3 & x2y3 == x3y3:
-    ##########
-    #    else:
-    #       if x1y1 == x1y2 & x1y2 == x1y3:
-    ###########
-    #      else:
-    #         if x2y1 == x2y2 & x2y2 == x2y3:
-    #######
-    #        else:
-    #           if x3y1 == x3y2 & x3y2 == x3y3:
-    ########
-    #          else:
-    #             if x1y1 == x2y2 & x2y2 == x3y3:
-    #######
-    #            else:
-    #               if x3y1 == x2y2 & x2y2 == x1y3:
-    ##########
-    #              else:
-    #                 if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-    #                        x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-    ############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 def da():
     global spieler
-    Reihe2[1] = spieler
+    Reihe2[0] = spieler
     if spieler == 1:
         spieler = 2
         x1y2.configure(background="yellow")
@@ -141,38 +145,38 @@ def da():
         spieler = 1
         x1y2.configure(background="green")
 
-    # if x1y1 == x2y1 & x2y1 == x3y1:
-    ######
-    # else:
-    #   if x1y2 == x2y2 & x2y2 == x3y2:
-    ##########
-    #  else:
-    #     if x1y3 == x2y3 & x2y3 == x3y3:
-    ##########
-    #    else:
-    #       if x1y1 == x1y2 & x1y2 == x1y3:
-    ###########
-    #      else:
-    #         if x2y1 == x2y2 & x2y2 == x2y3:
-    #######
-    #        else:
-    #           if x3y1 == x3y2 & x3y2 == x3y3:
-    ########
-    #          else:
-    #             if x1y1 == x2y2 & x2y2 == x3y3:
-    #######
-    #            else:
-    #               if x3y1 == x2y2 & x2y2 == x1y3:
-    ##########
-    #              else:
-    #                 if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-    #                        x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-    ############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 def ea():
     global spieler
-    Reihe2[2] = spieler
+    Reihe2[1] = spieler
     if spieler == 1:
         spieler = 2
         x2y2.configure(background="yellow")
@@ -180,38 +184,38 @@ def ea():
         spieler = 1
         x2y2.configure(background="green")
 
-    # if x1y1 == x2y1 & x2y1 == x3y1:
-    ######
-    # else:
-    #   if x1y2 == x2y2 & x2y2 == x3y2:
-    ##########
-    #  else:
-    #     if x1y3 == x2y3 & x2y3 == x3y3:
-    ##########
-    #    else:
-    #       if x1y1 == x1y2 & x1y2 == x1y3:
-    ###########
-    #      else:
-    #         if x2y1 == x2y2 & x2y2 == x2y3:
-    #######
-    #        else:
-    #           if x3y1 == x3y2 & x3y2 == x3y3:
-    ########
-    #          else:
-    #             if x1y1 == x2y2 & x2y2 == x3y3:
-    #######
-    #            else:
-    #               if x3y1 == x2y2 & x2y2 == x1y3:
-    ##########
-    #              else:
-    #                 if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-    #                        x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-    ############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 def fa():
     global spieler
-    Reihe2[3] = spieler
+    Reihe2[2] = spieler
     if spieler == 1:
         spieler = 2
         x3y2.configure(background="yellow")
@@ -219,38 +223,38 @@ def fa():
         spieler = 1
         x3y2.configure(background="green")
 
-    #   if x1y1 == x2y1 & x2y1 == x3y1:
-    ######
-    #  else:
-    #     if x1y2 == x2y2 & x2y2 == x3y2:
-    ##########
-    #    else:
-    #       if x1y3 == x2y3 & x2y3 == x3y3:
-    ##########
-    #      else:
-    #         if x1y1 == x1y2 & x1y2 == x1y3:
-    ###########
-    #        else:
-    #           if x2y1 == x2y2 & x2y2 == x2y3:
-    #######
-    #          else:
-    #             if x3y1 == x3y2 & x3y2 == x3y3:
-    ########
-    #            else:
-    #               if x1y1 == x2y2 & x2y2 == x3y3:
-    #######
-    #              else:
-    #                 if x3y1 == x2y2 & x2y2 == x1y3:
-    ##########
-    #                else:
-    #                   if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-    #                         x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-    #              ############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 def ga():
     global spieler
-    Reihe3[1] = spieler
+    Reihe3[0] = spieler
     if spieler == 1:
         spieler = 2
         x1y3.configure(background="yellow")
@@ -258,38 +262,38 @@ def ga():
         spieler = 1
         x1y3.configure(background="green")
 
-    # if x1y1 == x2y1 & x2y1 == x3y1:
-    ######
-    # else:
-    #   if x1y2 == x2y2 & x2y2 == x3y2:
-    ##########
-    #  else:
-    #     if x1y3 == x2y3 & x2y3 == x3y3:
-    ##########
-    #    else:
-    #       if x1y1 == x1y2 & x1y2 == x1y3:
-    ###########
-    #      else:
-    #         if x2y1 == x2y2 & x2y2 == x2y3:
-    #######
-    #        else:
-    #           if x3y1 == x3y2 & x3y2 == x3y3:
-    ########
-    #          else:
-    #             if x1y1 == x2y2 & x2y2 == x3y3:
-    #######
-    #            else:
-    #               if x3y1 == x2y2 & x2y2 == x1y3:
-    ##########
-    #              else:
-    #                 if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-    #                        x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-    ############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 def ha():
     global spieler
-    Reihe3[2] = spieler
+    Reihe3[1] = spieler
     if spieler == 1:
         spieler = 2
         x2y3.configure(background="yellow")
@@ -297,34 +301,33 @@ def ha():
         spieler = 1
         x2y3.configure(background="green")
 
-
-#   if x1y1 == x2y1 & x2y1 == x3y1:
-######
-#  else:
-#     if x1y2 == x2y2 & x2y2 == x3y2:
-##########
-#    else:
-#       if x1y3 == x2y3 & x2y3 == x3y3:
-##########
-#      else:
-#         if x1y1 == x1y2 & x1y2 == x1y3:
-###########
-#        else:
-#           if x2y1 == x2y2 & x2y2 == x2y3:
-#######
-#          else:
-#             if x3y1 == x3y2 & x3y2 == x3y3:
-########
-#            else:
-#               if x1y1 == x2y2 & x2y2 == x3y3:
-#######
-#              else:
-#                 if x3y1 == x2y2 & x2y2 == x1y3:
-##########
-#                else:
-#                   if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-#                          x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 def ia():
@@ -337,34 +340,33 @@ def ia():
         spieler = 1
         x3y3.configure(background="green")
 
-
-#  if x1y1 == x2y1 & x2y1 == x3y1:
-######
-# else:
-#    if x1y2 == x2y2 & x2y2 == x3y2:
-##########
-#   else:
-#      if x1y3 == x2y3 & x2y3 == x3y3:
-##########
-#     else:
-#        if x1y1 == x1y2 & x1y2 == x1y3:
-###########
-#       else:
-#          if x2y1 == x2y2 & x2y2 == x2y3:
-#######
-#         else:
-#            if x3y1 == x3y2 & x3y2 == x3y3:
-########
-#           else:
-#              if x1y1 == x2y2 & x2y2 == x3y3:
-#######
-#             else:
-#                if x3y1 == x2y2 & x2y2 == x1y3:
-##########
-#               else:
-#                  if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
-#                         x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
-############
+    if x1y1 == x2y1 & x2y1 == x3y1:
+        print("gewonnen")
+    else:
+        if x1y2 == x2y2 & x2y2 == x3y2:
+            print("gewonnen")
+        else:
+            if x1y3 == x2y3 & x2y3 == x3y3:
+                print("gewonnen")
+            else:
+                if x1y1 == x1y2 & x1y2 == x1y3:
+                    print("gewonnen")
+                else:
+                    if x2y1 == x2y2 & x2y2 == x2y3:
+                        print("gewonnen")
+                    else:
+                        if x3y1 == x3y2 & x3y2 == x3y3:
+                            print("gewonnen")
+                        else:
+                            if x1y1 == x2y2 & x2y2 == x3y3:
+                                print("gewonnen")
+                            else:
+                                if x3y1 == x2y2 & x2y2 == x1y3:
+                                    print("gewonnen")
+                                else:
+                                    if (x1y1 != 0) & (x1y2 != 0) & (x1y3 != 0) & (x2y1 != 0) & (x2y2 != 0) & (
+                                            x2y3 != 0) & (x3y1 != 0) & (x3y2 != 0) & (x3y3 != 0):
+                                        print("gewonnen")
 
 
 Feld = Tk()
